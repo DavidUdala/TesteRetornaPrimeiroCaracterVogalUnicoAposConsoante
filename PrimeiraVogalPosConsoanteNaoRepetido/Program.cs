@@ -91,7 +91,7 @@ namespace PrimeiraVogalPosConsoanteNaoRepetido
         }
         //Verifica se é consoante
         public static bool isConsoant(char caractere)
-        {                                  //Verifica se é letra do alfabeto usando taba ASCII
+        {                                  //Verifica se é letra do alfabeto usando tabela ASCII
             return !isVogal(caractere) && (caractere >= 'A' && caractere <= 'Z' || caractere >= 'a' && caractere <= 'z');
         }
 
