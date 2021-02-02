@@ -8,21 +8,31 @@ namespace PrimeiraVogalPosConsoanteNaoRepetido
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Digite um texto:");
-            string input = Console.ReadLine();
-            try
+            string continuar = "s";
+            while (continuar == "S" || continuar == "s")
             {
-                Stream stream = new Stream(input);
+                Console.WriteLine("\r\nDigite um texto:");
+                string input = Console.ReadLine();
+                string output = "";
+                try
+                {
+                    Stream stream = new Stream(input);
+                    Console.WriteLine("\r\nInput: {0}", input);
 
-                Console.WriteLine("\r\nInput: {0}", input);
-                Console.WriteLine("\r\nOutput: {0}", firstChar(stream).ToString());
-            }
-            catch (Exception ex)
-            {
+                    output = firstChar(stream).ToString();
+                    if (!string.IsNullOrWhiteSpace(output))
+                        Console.WriteLine("\r\nCaractere encontrado!\r\nResultado: {0}", output);
+                    else
+                        Console.WriteLine("\r\nCaractere não encontrado!");
 
-                Console.WriteLine(ex.Message);
+                    Console.WriteLine("\r\nDeseja continuar procurando?(S/N)");
+                    continuar = Console.ReadLine();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
-            Console.Read();
         }
 
         public static char firstChar(IStream input)
@@ -48,7 +58,7 @@ namespace PrimeiraVogalPosConsoanteNaoRepetido
             //Verifica quais caracteres vogais do dicionarios estão com value 1 que é a quantidade de vezes que ele aparece no caso unico
             foreach (char caracter in dicioContadorChar.Keys)
             {
-               int i = 0;
+                int i = 0;
                 dicioContadorChar.TryGetValue(caracter, out int value);
                 if (value == 1 && isVogal(caracter))
                 {
