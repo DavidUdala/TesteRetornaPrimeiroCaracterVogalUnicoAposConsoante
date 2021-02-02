@@ -2,7 +2,7 @@
 
 namespace PrimeiraVogalPosConsoanteNaoRepetido
 {
-    class Stream : IStream
+    public class Stream : IStream
     {
         //Texto digitado
         public char[] texto;

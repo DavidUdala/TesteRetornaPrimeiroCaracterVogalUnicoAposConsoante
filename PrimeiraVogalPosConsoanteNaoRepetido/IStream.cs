@@ -1,6 +1,6 @@
 ﻿namespace PrimeiraVogalPosConsoanteNaoRepetido
 {
-    interface IStream
+    public interface IStream
     {
         char getNext();
         bool hasNext();
