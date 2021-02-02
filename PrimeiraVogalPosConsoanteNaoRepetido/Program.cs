@@ -64,7 +64,7 @@ namespace PrimeiraVogalPosConsoanteNaoRepetido
                     //Busca a posição inicial dentro da string desse caractere vogal unico
                     foreach (char vowalUnique in input.getInputCompleto())
                     {
-                        if (vowalUnique == caracter)
+                        if (vowalUnique == caracter && i != 0)
                         {
                             //Recebe caracter anterior a posição inicial do caracter vogal unico
                             caracterAnteriorAVogalUnica = (Char)input.getInputCompleto().GetValue(i - 1);
